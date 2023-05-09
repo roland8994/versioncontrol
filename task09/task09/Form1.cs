@@ -174,7 +174,7 @@ namespace task09
                     Person újszülött = new Person();
                     újszülött.BirthYear = year;
                     újszülött.NbrOfChildren = 0;
-                    újszülött.Gender = (Gender)(rng.Next(1, 3));
+                    újszülött.Gender = (Gender)(rng.Next(1, 3)); //rng.Next egész számokat generál, itt 1 és 2 között, nem pedig 3-ig
                     Population.Add(újszülött);
                 }
             }
