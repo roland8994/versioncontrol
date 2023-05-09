@@ -14,6 +14,7 @@ namespace task09
 {
     public partial class Form1 : Form
     {
+        Random rng = new Random(1234); //seed megadása, hogy a teszteknél mindig ugyanzokat a számokat kapjam
         List<Person> Population = new List<Person>();
         List<BirthProbability> BirthProbabilities = new List<BirthProbability>();
         List<DeathProbability> DeathProbabilities = new List<DeathProbability>();
@@ -157,7 +158,7 @@ namespace task09
                              where x.Gender == person.Gender && x.Age == age
                              select x.P).FirstOrDefault();
             // Meghal a személy?
-            if (rng.NextDouble() <= pDeath)
+            if (rng.NextDouble() <= pDeath)  //NextDouble 0 és 1 közötti valószínűség
                 person.IsAlive = false;
 
             //Születés kezelése - csak az élő nők szülnek
